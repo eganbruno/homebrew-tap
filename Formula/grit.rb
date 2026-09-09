@@ -1,25 +1,25 @@
 class Grit < Formula
-  desc "Work across many git repositories from anywhere, by alias."
+  desc "Work across many git and dolt repositories from anywhere, by alias."
   homepage "https://github.com/eganbruno/grit"
-  version "0.1.0"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/eganbruno/grit/releases/download/v0.1.0/grit-aarch64-apple-darwin.tar.xz"
-      sha256 "aad25ed17773c130199204900122b1431d8982bb3476579bf585fda44d4f4f1f"
+      url "https://github.com/eganbruno/grit/releases/download/v0.2.0/grit-aarch64-apple-darwin.tar.xz"
+      sha256 "1339409b0faa2446270da4d704efee6d3c19d2d1e54d41c13fa2eeeb27e92dea"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/eganbruno/grit/releases/download/v0.1.0/grit-x86_64-apple-darwin.tar.xz"
-      sha256 "122db9ca3dbfc30607b37761a4259bd837f3b2fe563ae33055d3d1147588b287"
+      url "https://github.com/eganbruno/grit/releases/download/v0.2.0/grit-x86_64-apple-darwin.tar.xz"
+      sha256 "ebf50e573fb24d9c5fa1ca675c1b011df5acb0b3cb0830c7b1492c78dacbcbe0"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/eganbruno/grit/releases/download/v0.1.0/grit-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "6827179261fec4520acf7bc95a6106b7f70793830069a1e63d3ab5a22fd858eb"
+      url "https://github.com/eganbruno/grit/releases/download/v0.2.0/grit-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "9d54888823eaaee842e25c6095b57d3e5e7b159423c93a526036d2866780f798"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/eganbruno/grit/releases/download/v0.1.0/grit-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d79c58906f90f993d5a1fd49a1f681a31076dda013bde14efdc45130445150f9"
+      url "https://github.com/eganbruno/grit/releases/download/v0.2.0/grit-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "ec7b38fd52a55f3c92e0db7a830a65ade57b3d1d6178c48dc50faa51cea83f1a"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -47,10 +47,18 @@ class Grit < Formula
   end
 
   def install
-    bin.install "grit" if OS.mac? && Hardware::CPU.arm?
-    bin.install "grit" if OS.mac? && Hardware::CPU.intel?
-    bin.install "grit" if OS.linux? && Hardware::CPU.arm?
-    bin.install "grit" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "grit"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "grit"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "grit"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "grit"
+    end
 
     install_binary_aliases!
 
