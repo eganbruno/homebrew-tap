@@ -1,25 +1,25 @@
 class Grit < Formula
   desc "Work across many git and dolt repositories from anywhere, by alias."
   homepage "https://github.com/eganbruno/grit"
-  version "0.2.0"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/eganbruno/grit/releases/download/v0.2.0/grit-aarch64-apple-darwin.tar.xz"
-      sha256 "1339409b0faa2446270da4d704efee6d3c19d2d1e54d41c13fa2eeeb27e92dea"
+      url "https://github.com/eganbruno/grit/releases/download/v0.3.0/grit-aarch64-apple-darwin.tar.xz"
+      sha256 "3a7120438fa741970065f460aa7b89b27c250a840d06760037483e23cd3e7c9d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/eganbruno/grit/releases/download/v0.2.0/grit-x86_64-apple-darwin.tar.xz"
-      sha256 "ebf50e573fb24d9c5fa1ca675c1b011df5acb0b3cb0830c7b1492c78dacbcbe0"
+      url "https://github.com/eganbruno/grit/releases/download/v0.3.0/grit-x86_64-apple-darwin.tar.xz"
+      sha256 "7f7ec254730ce488728a795299f439f3de2cc02dd78cac5d2134558a4e8e9688"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/eganbruno/grit/releases/download/v0.2.0/grit-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "9d54888823eaaee842e25c6095b57d3e5e7b159423c93a526036d2866780f798"
+      url "https://github.com/eganbruno/grit/releases/download/v0.3.0/grit-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "4b624cf647a8bd8b5bbe74aca8aa0f654b34164503b2ba193af73cda9152eaf0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/eganbruno/grit/releases/download/v0.2.0/grit-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ec7b38fd52a55f3c92e0db7a830a65ade57b3d1d6178c48dc50faa51cea83f1a"
+      url "https://github.com/eganbruno/grit/releases/download/v0.3.0/grit-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "1e89f9ea1f2879d5b20bc879922c6368d0a953772dcecb2c76d254eca09ad502"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
